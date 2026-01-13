@@ -356,4 +356,6 @@ pip-selfcheck.json
 .history
 .ionide
 
+.sesac-dobong
+
 # End of https://www.toptal.com/developers/gitignore/api/python,node,visualstudiocode,react,venv
