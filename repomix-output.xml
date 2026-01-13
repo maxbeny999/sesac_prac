@@ -1,0 +1,1396 @@
+This file is a merged representation of a subset of the codebase, containing specifically included files, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of a subset of the repository's contents that is considered the most important context.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Only files matching these patterns are included: python
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+python/problem01_answer.ipynb
+python/problem01.ipynb
+python/python_01_variable.ipynb
+python/python_02_data_type.ipynb
+python/python_03_operator.ipynb
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="python/problem01_answer.ipynb">
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# problem01\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### 문제 1\n",
+    "본인의 이름, 키, 그리고 면허 소지 여부를 나타내는 데이터를 각각 변수에 할당하세요."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "df6a048a",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# 여기에 코드를 작성하세요.\n",
+    "# 주석.\n",
+    "# 코드의 실행에 영향을 끼치지 않는 text입니다.\n",
+    "# ctrl + / (드래그해서 한번에도 가능합니다.)\n",
+    "\n",
+    "# 변수 = data\n",
+    "# 이름\n",
+    "# jun = 123\n",
+    "name = \"jun\"\n",
+    "\n",
+    "height = 190\n",
+    "\n",
+    "# 면허 소지 여부\n",
+    "has_driver_license = True"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "45e701da",
+   "metadata": {},
+   "source": [
+    "### 문제 2\n",
+    "다음과 같은 변수들이 선언되어 있습니다.\n",
+    "```python\n",
+    "v1 = 123\n",
+    "v2 = \"123\"\n",
+    "v3 = \"12.3\"\n",
+    "v4 = 12.3\n",
+    "v5 = \"True\"\n",
+    "v6 = True\n",
+    "```\n",
+    "각 변수가 어떤 데이터 타입인지 확인하세요"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "3f1e1e01",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<class 'int'>\n",
+      "<class 'str'>\n",
+      "<class 'str'>\n",
+      "<class 'float'>\n",
+      "<class 'str'>\n",
+      "<class 'bool'>\n"
+     ]
+    }
+   ],
+   "source": [
+    "v1 = 123\n",
+    "v2 = \"123\"\n",
+    "v3 = \"12.3\"\n",
+    "v4 = 12.3\n",
+    "v5 = \"True\"\n",
+    "v6 = True\n",
+    "\n",
+    "print(type(v1))\n",
+    "print(type(v2))\n",
+    "print(type(v3))\n",
+    "print(type(v4))\n",
+    "print(type(v5))\n",
+    "print(type(v6))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### 문제 3\n",
+    "두 정수 `num1 = 15`, `num2 = 20`이 주어졌을 때, 다음 조건을 모두 만족하는 논리 연산식을 작성하고 그 결과를 출력하세요.\n",
+    "1. `num1`이 10보다 크다.\n",
+    "2. `num2`가 30보다 작거나 같다.\n",
+    "3. 위 두 조건이 모두 참(True)인지 확인한다."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "True\n",
+      "True\n",
+      "True\n"
+     ]
+    }
+   ],
+   "source": [
+    "num1 = 15\n",
+    "num2 = 20\n",
+    "\n",
+    "# 여기에 논리 연산식을 작성하세요.\n",
+    "# 1 \n",
+    "print(num1 > 10) # 파이썬은 이 형태를 권장.\n",
+    "# print(num1>10)\n",
+    "# print(10 < num1)\n",
+    "\n",
+    "condition1 = num1 > 10\n",
+    "\n",
+    "# 2\n",
+    "print(num2 <= 30)\n",
+    "\n",
+    "condition2 = num2 <= 30\n",
+    "\n",
+    "# 3.\n",
+    "print(condition1 and condition2)\n",
+    "print((num1 > 10) and (num2 <= 30))\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7a8a2a65",
+   "metadata": {},
+   "source": [
+    "### 문제4\n",
+    "논리 연산자를 사용하여 다음 조건을 만족하는 식을 작성하세요.\n",
+    "\n",
+    "score가 80점 이상이고 100점 이하이면 True, 아니면 False를 출력하세요.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "105e4ecd",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "score = 85\n",
+    "\n",
+    "is_over_80 = score >= 80\n",
+    "is_under_100 = score <= 100\n",
+    "\n",
+    "print(is_over_80 and is_under_100)\n",
+    "\n",
+    "\n",
+    "print(score >= 80 and score <= 100)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c97f7a18",
+   "metadata": {},
+   "source": [
+    "### 문제 5\n",
+    "물건의 가격이 price이고, 낸 돈이 money일 때, 거스름돈에서 500원 동전의 개수와 100원 동전의 개수를 구하는 프로그램을 작성하세요. \n",
+    "(단, 가격은 항상 100원 단위이며 money > price라고 가정합니다.)\n",
+    "\n",
+    "예: price = 3200, money = 5000 -> 500원: 3개, 100원: 3개"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "819e691c",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "3\n",
+      "3\n"
+     ]
+    }
+   ],
+   "source": [
+    "price = 3200\n",
+    "money = 5000\n",
+    "\n",
+    "# 거스름돈 = 낸돈 - 가격\n",
+    "change = money - price\n",
+    "\n",
+    "count_500 = change // 500 # 500원의 개수.\n",
+    "\n",
+    "remainder = change % 500 # 500원을 다 내고 남은 돈\n",
+    "\n",
+    "count_100 = remainder // 100 # 100원의 개수.\n",
+    "\n",
+    "print(count_500)\n",
+    "print(count_100)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "3.12.10",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.10"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
+</file>
+
+<file path="python/problem01.ipynb">
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# problem01\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### 문제 1\n",
+    "본인의 이름, 키, 그리고 면허 소지 여부를 나타내는 데이터를 각각 변수에 할당하세요."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 40,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "lch 171cm True\n"
+     ]
+    }
+   ],
+   "source": [
+    "# 여기에 코드를 작성하세요.\n",
+    "name = \"lch\"\n",
+    "height = \"171cm\"\n",
+    "license = True\n",
+    "print(name,height,license)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### 문제 2\n",
+    "다음과 같은 변수들이 선언되어 있습니다.\n",
+    "```python\n",
+    "v1 = 123\n",
+    "v2 = \"123\"\n",
+    "v3 = \"12.3\"\n",
+    "v4 = 12.3\n",
+    "v5 = \"True\"\n",
+    "v6 = True\n",
+    "```\n",
+    "각 변수가 어떤 데이터 타입인지 확인하세요"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 41,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<class 'int'> <class 'str'> <class 'str'> <class 'float'> <class 'str'> <class 'bool'>\n"
+     ]
+    }
+   ],
+   "source": [
+    "v1 = 123\n",
+    "v2 = \"123\"\n",
+    "v3 = \"12.3\"\n",
+    "v4 = 12.3\n",
+    "v5 = \"True\"\n",
+    "v6 = True\n",
+    "\n",
+    "print(type(v1),type(v2),type(v3),type(v4),type(v5),type(v6))\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### 문제 3\n",
+    "두 정수 `num1 = 15`, `num2 = 20`이 주어졌을 때, 다음 조건을 모두 만족하는 논리 연산식을 작성하고 그 결과를 출력하세요.\n",
+    "1. `num1`이 10보다 크다.\n",
+    "2. `num2`가 30보다 작거나 같다.\n",
+    "3. 위 두 조건이 모두 참(True)인지 확인한다."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "True\n",
+      "True\n",
+      "True\n"
+     ]
+    }
+   ],
+   "source": [
+    "num1 = 15\n",
+    "num2 = 20\n",
+    "\n",
+    "# 여기에 논리 연산식을 작성하세요.\n",
+    "print(num1 > 10)\n",
+    "\n",
+    "print(num2 <= 30)\n",
+    "\n",
+    "print(num1 > 10 and num2 <= 30)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7a8a2a65",
+   "metadata": {},
+   "source": [
+    "### 문제4\n",
+    "논리 연산자를 사용하여 다음 조건을 만족하는 식을 작성하세요.\n",
+    "\n",
+    "score가 80점 이상이고 100점 이하이면 True, 아니면 False를 출력하세요.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 43,
+   "id": "105e4ecd",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "True\n",
+      "True\n"
+     ]
+    }
+   ],
+   "source": [
+    "score = 85\n",
+    "\n",
+    "is_over_80 = score >= 80\n",
+    "is_under_100 = score <= 100\n",
+    "\n",
+    "\n",
+    "print(is_over_80 and is_under_100)\n",
+    "print(score >= 80 and score <= 100 )"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c97f7a18",
+   "metadata": {},
+   "source": [
+    "### 문제 5\n",
+    "물건의 가격이 price이고, 낸 돈이 money일 때, 거스름돈에서 500원 동전의 개수와 100원 동전의 개수를 구하는 프로그램을 작성하세요. \n",
+    "(단, 가격은 항상 100원 단위이며 money > price라고 가정합니다.)\n",
+    "\n",
+    "예: price = 3200, money = 5000 -> 500원: 3개, 100원: 3개"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "819e691c",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1800\n",
+      "3\n",
+      "300\n",
+      "3\n"
+     ]
+    }
+   ],
+   "source": [
+    "price = 3200\n",
+    "money = 5000\n",
+    "coin500 = 500 \n",
+    "coin100 = 100\n",
+    "\n",
+    "change = money-price\n",
+    "leftover = change % coin500\n",
+    "\n",
+    "print(change) # 거스름돈\n",
+    "print(change // coin500) # 500원의 개수\n",
+    "print(change % coin500) # 500원 내고 남은 돈\n",
+    "print(leftover // coin100) # 100원의 개수"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "3.12.10",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.10"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
+</file>
+
+<file path="python/python_01_variable.ipynb">
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 변수(Variables)\n",
+    "\n",
+    "## 1. 변수란?\n",
+    "\n",
+    "### 1-1. 변수는 상자이다.\n",
+    "변수란 **데이터의 값을 저장하는 상자**와 같습니다.  \n",
+    "아래와 같이 파이썬으로 선언한다면, 이를 **\"변수 `number`에 정수 100이 담겨있다\"**라고 표현할 수 있습니다."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "number = 100"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### 1-2. 할당(assignment)\n",
+    "변수를 생성할 때는 **할당 연산자(=)**를 사용합니다. `변수 이름 = 값`의 형식으로 작성합니다.\n",
+    "\n",
+    "> **💡 주의:** 수학의 등호(=)처럼 왼쪽과 오른쪽이 같다는 의미가 아니라, **오른쪽 값이 왼쪽 변수에 할당(대입)**된다는 의미입니다.\n",
+    "\n",
+    "변수를 출력하면, 해당 변수에 담긴 값이 출력됩니다."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "name = \"kyle\"   # name 변수에 문자열 \"kyle\"을 할당\n",
+    "age = 20        # age 변수에 정수형 20을 할당\n",
+    "is_male = True  # is_male 변수에 불린형 True를 할당\n",
+    "\n",
+    "print(name)\n",
+    "print(age)\n",
+    "print(is_male)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "이제 `type()` 내장함수에 값 대신 변수를 넣어서, 해당 데이터의 타입을 알 수 있습니다."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "name = \"kyle\"\n",
+    "age = 20\n",
+    "is_male = True\n",
+    "\n",
+    "print(type(name))\n",
+    "print(type(age))\n",
+    "print(type(is_male))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### 1-3. 변수의 장점\n",
+    "\n",
+    "#### ① 변수는 데이터에 의미를 부여한다.\n",
+    "정수 20은 날 것의 데이터이므로, 그 값이 ‘나이’를 의미하는지 ‘갯수’를 의미하는지 알 수 없습니다."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(20)  # 정수 20이 무엇을 의미하는지 모름"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "변수를 만들어 값을 할당한 후 출력해 봅니다. 이제 정수 20이 ‘나이’를 의미한다는 것을 알 수 있습니다.  \n",
+    "이처럼, **변수는 각 데이터가 어떤 의미를 가지고 있는지 쉽게 파악**하게 해줍니다."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "age = 20  # 정수 20이 나이를 의미함을 알 수 있음\n",
+    "print(age)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### ② 변수는 코드의 재사용성과 가독성을 높여준다.\n",
+    "아래는 동일한 문자열을 5번 출력하는 코드입니다. 변수를 사용하지 않으면 코드가 비효율적입니다."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(\"Life is too short, You need Python.\")\n",
+    "print(\"Life is too short, You need Python.\")\n",
+    "print(\"Life is too short, You need Python.\")\n",
+    "print(\"Life is too short, You need Python.\")\n",
+    "print(\"Life is too short, You need Python.\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "이번에는 변수를 만들어 값을 할당한 후 출력해 봅니다. 하나의 변수로 문자열을 재사용하고 있고, 훨씬 코드도 깔끔해졌습니다."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "sentence = \"Life is too short, You need Python.\"\n",
+    "\n",
+    "print(sentence)\n",
+    "print(sentence)\n",
+    "print(sentence)\n",
+    "print(sentence)\n",
+    "print(sentence)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### ③ 변수는 유지보수를 쉽게 해준다.\n",
+    "만약 \"You\"를 \"We\"로 바꾸고 싶다면? 변수가 없다면 모든 줄을 일일이 수정해야 하지만, 변수를 사용하면 **단 1번만 수정**하면 됩니다."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "sentence = \"Life is too short, We need Python.\"\n",
+    "\n",
+    "print(sentence)\n",
+    "print(sentence)\n",
+    "print(sentence)\n",
+    "print(sentence)\n",
+    "print(sentence)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "## 2. 식별자와 리터럴\n",
+    "\n",
+    "### 2-1. 식별자(Identifiers)\n",
+    "식별자는 **변수의 이름**을 뜻합니다. 할당 연산자(=)에서 왼쪽에 해당합니다.\n",
+    "\n",
+    "**변수명(식별자) 작성 규칙**\n",
+    "1. 알파벳, 언더바(_), 숫자로 구성되어야 한다. (예: `number`, `my_note`, `car1`)\n",
+    "2. 첫 글자에는 숫자가 올 수 없다. (예: `1car`는 불가능)\n",
+    "3. 대소문자를 구별한다. (`a`와 `A`는 서로 다른 변수)\n",
+    "4. 띄어쓰기가 필요한 경우 언더바(_)로 구분한다. (예: `my_list`)\n",
+    "5. **예약어**로 지을 수 없다.\n",
+    "\n",
+    "**파이썬 예약어 목록:**\n",
+    "`False`, `None`, `True`, `and`, `as`, `assert`, `async`, `await`, `break`, `class`, `continue`, `def`, `del`, `elif`, `else`, `except`, `finally`, `for`, `from`, `global`, `if`, `import`, `in`, `is`, `lambda`, `nonlocal`, `not`, `or`, `pass`, `raise`, `return`, `try`, `while`, `with`, `yield`"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### 2-2. 리터럴(Literal)\n",
+    "리터럴은 **데이터의 값**을 뜻합니다. 할당 연산자(=)에서 오른쪽에 해당합니다.\n",
+    "\n",
+    "> **정리하자면:** 변수는 **박스**이고, 식별자는 박스에 붙은 **이름**이며, 리터럴은 박스에 담긴 **값**입니다."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "number = 100  # 식별자가 number인 변수에 정수 리터럴 100을 할당"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "## 3. 재할당과 동시 할당\n",
+    "\n",
+    "### 3-1. 재할당\n",
+    "한 번 값을 할당한 변수에 다른 값을 다시 할당할 수 있습니다. 변수는 **가장 마지막으로 할당한 값**을 기억합니다."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "number = 100\n",
+    "number = 200\n",
+    "number = 300\n",
+    "\n",
+    "print(number)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### 3-2. 동시 할당\n",
+    "여러 변수에 같은 값을 동시에 할당하거나, 서로 다른 값을 한 줄에 할당할 수 있습니다."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# 동일한 값 할당\n",
+    "x = y = 10\n",
+    "print(x)\n",
+    "print(y)\n",
+    "\n",
+    "# 서로 다른 값 동시에 할당\n",
+    "x, y = 10, 20\n",
+    "print(x)\n",
+    "print(y)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
+</file>
+
+<file path="python/python_02_data_type.ipynb">
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "8b5c9c1e",
+   "metadata": {},
+   "source": [
+    "# 자료형(Data types)\n",
+    "\n",
+    "## 1. 자료형이란?\n",
+    "자료형(data types)은 프로그래밍을 할 때 사용되는 모든 자료(데이터)의 형태를 의미합니다. 어떤 형태의 자료를 처리할 것인지 알아야만 올바른 결과물을 만들 수 있습니다."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "4bc480f0",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "## 2. 숫자형\n",
+    "\n",
+    "### 2-1. 정수형(int)\n",
+    "양의 정수, 음의 정수, 0을 뜻합니다."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8ac16653",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(100)\n",
+    "print(0)\n",
+    "print(-25)\n",
+    "\n",
+    "print(type(100))\n",
+    "print(type(0))\n",
+    "print(type(-25))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f2c74e72",
+   "metadata": {},
+   "source": [
+    "### 2-2. 실수형(float)\n",
+    "소수점이 포함된 숫자를 뜻합니다."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "540c3620",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(1.2)\n",
+    "print(-3.56)\n",
+    "\n",
+    "print(type(1.2))\n",
+    "print(type(-3.56))\n",
+    "print(type(4.0))  # 정수 4와 같아 보이지만 소수점이 있으므로 실수형입니다."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "877e98ff",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "## 3. 문자열(String)\n",
+    "\n",
+    "### 3-1. 문자열이란?\n",
+    "한글, 알파벳 등 문자들의 집합을 뜻하며, 작은따옴표(') 혹은 큰따옴표(\")로 감싸 표기합니다."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "40f61d65",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print('Hello Python')\n",
+    "print('파이썬')\n",
+    "print('123')    \n",
+    "print('#$%^&*')\n",
+    "\n",
+    "print(type('python'))\n",
+    "print(type(\"python\"))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "dc94fe4a",
+   "metadata": {},
+   "source": [
+    "### 3-2. 문자열 사용 시 주의사항\n",
+    "\n",
+    "1. **공백과 빈 문자열**: 공백(`' '`)과 빈 문자열(`''`)도 하나의 문자열로 취급됩니다.\n",
+    "2. **따옴표 짝 맞추기**: `'Hello\"`와 같이 섞어 쓰면 `SyntaxError`가 발생합니다.\n",
+    "3. **따옴표 중첩**: 같은 종류의 따옴표를 중첩하면 에러가 발생합니다."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "baef8cb4",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(\"큰따옴표 안에 '작은따옴표' 사용하기\")\n",
+    "print('작은따옴표 안에 \"큰따옴표\" 사용하기')\n",
+    "\n",
+    "# 에러 예시 (주석을 풀고 실행해 보세요)\n",
+    "# print(\"큰따옴표 안에 \"큰따옴표\" 사용하기\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6e866f2a",
+   "metadata": {},
+   "source": [
+    "### 이스케이프 시퀀스(Escape Sequence)\n",
+    "백슬래시(`\\`)를 사용하여 특수한 문자를 표현합니다.\n",
+    "\n",
+    "| 시퀀스 | 설명 | 예시 |\n",
+    "|:---:|:---|:---|\n",
+    "| `\\'` | 작은따옴표 표현 | `'\\'이렇게\\''` |\n",
+    "| `\\\"` | 큰따옴표 표현 | `\"\\\"이렇게\\\"\"` |\n",
+    "| `\\\\` | 백슬래시 표현 | `\"\\\\\"` |\n",
+    "| `\\n` | 줄바꿈(Next line) | `\"Hello\\nPython\"` |\n",
+    "| `\\t` | 탭(Tab) | `\"Name:\\tKyle\"` |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "2a47c0c3",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(\"큰따옴표 안에 \\\"이렇게\\\" 사용하기\")\n",
+    "print('작은따옴표 안에 \\'이렇게\\' 사용하기')\n",
+    "print(\"하나\\n둘\\t셋\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "936b7ec0",
+   "metadata": {},
+   "source": [
+    "### ⚠️ 숫자 123과 문자열 '123'은 다릅니다.\n",
+    "외관상 같아 보여도 자료형에 따라 할 수 있는 연산이 달라집니다."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "c8ba5866",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(type(123))\n",
+    "print(type('123'))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "681b3705",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "## 4. 불린형(Boolean)\n",
+    "참(`True`)과 거짓(`False`)을 뜻합니다."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8c3f0f87",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(True)\n",
+    "print(False)\n",
+    "print(type(True))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7764164d",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "## 5. 명시적 형변환(Typecasting)\n",
+    "\n",
+    "### 5-1. `int()`: 정수형으로 변환\n",
+    "- 문자열(정수 형태) → 정수\n",
+    "- 실수형 → 정수 (소수점 이하 버림)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "5bb0638f",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(int('123'))\n",
+    "print(int(1.5))   # 1\n",
+    "print(int(-1.5))  # -1\n",
+    "\n",
+    "# 에러 주의: 실수 형식의 문자열은 int()로 바로 변환 불가\n",
+    "# print(int('1.5'))  # ValueError 발생"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "29b2f692",
+   "metadata": {},
+   "source": [
+    "### 5-2. `float()`: 실수형으로 변환\n",
+    "- 문자열(실수 형태) → 실수\n",
+    "- 정수형 → 실수"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "0ba1b450",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(float('3.5'))\n",
+    "print(float(10))   # 10.0\n",
+    "\n",
+    "# 에러 주의: 계산식 형태의 문자열은 변환 불가\n",
+    "# print(float('3/5')) # ValueError 발생"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9c086bba",
+   "metadata": {},
+   "source": [
+    "### 5-3. `str()`: 문자열로 변환"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e57684eb",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(str(123))\n",
+    "print(str(10.5))\n",
+    "print(str(True))\n",
+    "print(type(str(True)))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d3610936",
+   "metadata": {},
+   "source": [
+    "### 5-4. `bool()`: 불린형으로 변환\n",
+    "파이썬에서는 데이터의 유무에 따라 참과 거짓을 평가합니다.\n",
+    "\n",
+    "| 데이터의 값 | Boolean | 설명 |\n",
+    "|:---|:---:|:---|\n",
+    "| `0`, `0.0` | **False** | 숫자 0은 거짓 |\n",
+    "| `''` (빈 문자열) | **False** | 내용이 없으면 거짓 |\n",
+    "| `[]` (빈 리스트) | **False** | 비어있는 리스트는 거짓 |\n",
+    "| `1`, `-1`, `1.5` | **True** | 0 이외의 숫자는 참 |\n",
+    "| `'Hello'` | **True** | 내용이 있으면 참 |\n",
+    "| `[1, 2, 3]` | **True** | 요소가 있으면 참 |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d0d461a2",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(bool(1))\n",
+    "print(bool('hello'))\n",
+    "print(bool(0))\n",
+    "print(bool(''))\n",
+    "print(bool([]))"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
+</file>
+
+<file path="python/python_03_operator.ipynb">
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 연산자(Operators)\n",
+    "\n",
+    "## 1. 산술 연산자\n",
+    "파이썬은 다양한 산술 연산 기능을 제공합니다.\n",
+    "\n",
+    "| 산술 연산자 | 설명 | 산술 연산자 | 설명 |\n",
+    "|:---:|:---|:---:|:---|\n",
+    "| `+` | 덧셈 | `-` | 뺄셈 |\n",
+    "| `*` | 곱셈 | `/` | 나눗셈 |\n",
+    "| `//` | 몫 | `%` | 나머지 |\n",
+    "| `**` | 제곱 | | |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "a = 5\n",
+    "b = 2\n",
+    "\n",
+    "print(a + b)   # 5 더하기 2\n",
+    "print(a - b)   # 5 빼기 2\n",
+    "print(a * b)   # 5 곱하기 2\n",
+    "print(a / b)   # 5 나누기 2 (항상 결과는 float 타입)\n",
+    "print(a // b)  # 5를 2로 나눈 몫\n",
+    "print(a % b)   # 5를 2로 나눈 나머지\n",
+    "print(a ** b)  # 5의 2 제곱"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### ⚠️ ZeroDivisionError 주의\n",
+    "정수 0으로 다른 수를 나누게 되면 에러가 발생합니다."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# 아래 코드의 주석을 풀고 실행하면 ZeroDivisionError가 발생합니다.\n",
+    "# print(12 / 0)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "## 2. 복합 연산자\n",
+    "산술 연산 이후 동일한 변수에 재할당할 때 연산을 축약할 수 있습니다.\n",
+    "\n",
+    "| 복합 연산자 | 설명 | 복합 연산자 | 설명 |\n",
+    "|:---:|:---|:---:|:---|\n",
+    "| `a += b` | `a = a + b` | `a -= b` | `a = a - b` |\n",
+    "| `a *= b` | `a = a * b` | `a /= b` | `a = a / b` |\n",
+    "| `a //= b` | `a = a // b` | `a %= b` | `a = a % b` |\n",
+    "| `a **= b` | `a = a ** b` | | |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "a = 5\n",
+    "b = 2\n",
+    "\n",
+    "a += b  # a = a + b\n",
+    "b -= 1  # b = b - 1\n",
+    "\n",
+    "print(a)\n",
+    "print(b)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### 💡 복합 연산자의 계산 순서\n",
+    "복합 연산자의 오른쪽에 연산식이 오면, **그 연산식이 먼저 계산**된 후 복합 연산이 수행됩니다."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "a = 5\n",
+    "b = 2\n",
+    "\n",
+    "a -= b + 3  # a = a - (b + 3) 으로 계산됨\n",
+    "print(a)    # 결과는 0"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "## 3. 비교 연산자\n",
+    "두 피연산자의 값을 비교하여 참(`True`), 거짓(`False`)을 반환합니다.\n",
+    "\n",
+    "| 비교 연산자 | 의미 | 비교 연산자 | 의미 |\n",
+    "|:---:|:---|:---:|:---|\n",
+    "| `<` | 미만 | `<=` | 이하 |\n",
+    "| `>` | 초과 | `>=` | 이상 |\n",
+    "| `==` | 같다 | `!=` | 같지 않다 |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(2 < 5)   # 2가 5보다 작은가?\n",
+    "print(2 <= 5)  # 2가 5보다 작거나 같은가?\n",
+    "print(2 > 5)   # 2가 5보다 큰가?\n",
+    "print(2 >= 5)  # 2가 5보다 크거나 같은가?\n",
+    "print(2 == 5)  # 2가 5와 같은가?\n",
+    "print(2 != 5)  # 2가 5와 다른가?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "숫자뿐만 아니라, **문자열도 비교 연산이 가능**합니다."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(\"one\" == \"one\")        # True\n",
+    "print(\"python\" == \"PYTHON\")  # False (대소문자 구별)\n",
+    "print(\"vscode\" != \"VSCODE\")  # True\n",
+    "print(\"hello\" != \"hello\")    # False"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "## 4. 논리 연산자\n",
+    "\n",
+    "| 논리 연산자 | 설명 |\n",
+    "|:---:|:---|\n",
+    "| `a and b` | a와 b가 모두 True이면 True |\n",
+    "| `a or b` | a와 b 중 하나라도 True이면 True |\n",
+    "| `not a` | a가 True이면 False, False이면 True |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(True and True)   # True\n",
+    "print(True and False)  # False\n",
+    "print(True or False)   # True\n",
+    "print(not True)        # False"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### 💡 불린형 이외 자료형의 논리 연산\n",
+    "다른 자료형들도 참/거짓으로 평가될 수 있습니다.\n",
+    "\n",
+    "| 데이터의 값 | Boolean | 데이터의 값 | Boolean |\n",
+    "|:---|:---:|:---|:---:|\n",
+    "| `0`, `0.0` | **False** | `1`, `-1`, `1.5` | **True** |\n",
+    "| `''` (빈 문자열) | **False** | `'Hello'` | **True** |\n",
+    "| `[]` (빈 리스트) | **False** | `[1, 2, 3]` | **True** |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(not 0)         # True\n",
+    "print(not \"\")        # True\n",
+    "print(not \"python\")  # False\n",
+    "\n",
+    "# 비교 연산과 함께 사용\n",
+    "print(1 == 2 and \"hi\" == \"hi\")  # False and True -> False\n",
+    "print(5 > 2 or 0 != 0)          # True or False -> True\n",
+    "print(not 4 <= 3)               # not False -> True"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "## 5. 연산자 우선순위\n",
+    "파이썬 연산자의 전체 우선순위 표입니다. 숫자가 낮을수록 우선순위가 높습니다.\n",
+    "\n",
+    "| 우선순위 | 연산자 | 설명 |\n",
+    "|:---:|:---|:---|\n",
+    "| 1 | `**` | 지수 연산(거듭제곱) |\n",
+    "| 2 | `+x`, `-x`, `~x` | 단항 연산자 |\n",
+    "| 3 | `*`, `/`, `//`, `%` | 곱셈, 나눗셈, 몫, 나머지 |\n",
+    "| 4 | `+`, `-` | 덧셈, 뺄셈 |\n",
+    "| 5 | `<<`, `>>` | 비트 시프트 |\n",
+    "| 6 | `&` | 비트 AND |\n",
+    "| 7 | `^` | 비트 XOR |\n",
+    "| 8 | `|` | 비트 OR |\n",
+    "| 9 | `<`, `<=`, `>`, `>=`, `==`, `!=`, `in`, `is` | 비교, 멤버십, 동일성 |\n",
+    "| 10 | `not x` | 논리 NOT |\n",
+    "| 11 | `and` | 논리 AND |\n",
+    "| 12 | `or` | 논리 OR |\n",
+    "| 13 | `if ... else` | 조건 표현식 |\n",
+    "| 14 | `lambda` | 람다 표현식 |"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
+</file>
+
+</files>
