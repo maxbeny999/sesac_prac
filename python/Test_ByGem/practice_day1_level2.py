@@ -16,8 +16,10 @@ input_password = "sesac_password" # 이 값을 바꿔가며 테스트해보세�
 
 # [코드 작성 공간] --------------------------
 
-
-
+if input_password == db_password:
+    print("로그인 성공")
+else:
+    print("비밀번호가 틀렸습니다")
 
 # ------------------------------------------
 
@@ -33,9 +35,14 @@ status_code = 404
 
 # [코드 작성 공간] --------------------------
 
-
-
-
+if status_code == 404:
+    print("페이지 없음")
+elif status_code == 200:
+    print("정상(OK)")
+elif status_code == 500:
+    print("서버 내부 오류(Internal Error)")
+else:
+    print("알 수 없는 코드")
 # ------------------------------------------
 
 
@@ -46,7 +53,8 @@ files = ["data.csv", "image.png", "report.pdf", "script.py"]
 
 # [코드 작성 공간] --------------------------
 
-
+for names in files:
+    print(names)
 
 
 # ------------------------------------------
@@ -61,7 +69,9 @@ total = 0  # 이 변수에 값을 계속 누적해서 더하세요.
 
 # [코드 작성 공간] --------------------------
 
-
+for number in numbers:
+    total += number
+print(total)
 
 
 # ------------------------------------------
@@ -79,7 +89,10 @@ even_numbers = []
 
 # [코드 작성 공간] --------------------------
 
-
+for numbers in number_list:
+    if numbers % 2 == 0:
+        even_numbers.append(numbers)
+print(even_numbers)
 
 
 # ------------------------------------------
@@ -93,7 +106,10 @@ scores = [70, 85, 92, 60, 100, 88]
 max_score = 0  # 현재까지 확인한 가장 높은 점수를 저장할 변수
 
 # [코드 작성 공간] --------------------------
-
+for score in scores:
+    if score > max_score:
+        max_score = score
+print(max_score)
 
 
 
@@ -110,8 +126,9 @@ exchange_rate = 1400
 
 # [코드 작성 공간] --------------------------
 
-
-
+for dollar in usd_prices:
+    krw = dollar * exchange_rate
+    print(krw)
 
 # ------------------------------------------
 
@@ -124,8 +141,9 @@ print("\n[문제 8: 범인 찾기 (Break)]")
 server_logs = ["Success", "Success", "Warning", "Error", "Success", "Success"]
 
 # [코드 작성 공간] --------------------------
-
-
-
+for msg in server_logs:
+    if msg == "Error":
+        print("에러 발생")
+        break
 
 # ------------------------------------------
