@@ -1,10 +1,7 @@
 import os
 import requests
-import sys
 from dotenv import load_dotenv
 from pprint import pprint
-import urllib.request
-import urllib.parse
 from openai import OpenAI
 import json
 
@@ -46,7 +43,7 @@ def naver_search_news(keyword):
         for item in data['items']:
             title = item['title'].replace('<b>','').replace('</b>','').replace('&quot;','"')
             link = item['link']
-            result_text += f"- 제목: {title}\n  링크: {link}\n"
+            result_text += f"- 제목: {title}  링크: {link}"
 
         return result_text 
     else:
@@ -117,8 +114,8 @@ def run_conversation(user_query):
                 
 if __name__ == "__main__":
     query = f"{input()}"
-    print(f"유저: {query}\n")
+    pprint(f"유저: {query}")
 
     answer = run_conversation(query)
 
-    print(f"\n챗봇: {answer}")
+    pprint(f"챗봇: {answer}")
