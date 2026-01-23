@@ -3,7 +3,7 @@
 # 목표: 배운 문법을 조합해서 '논리적인 문제'를 해결합니다.
 
 # ----------------------------------------------------------------------
-# [문제 1] 자릿수 더하기
+# [문제 1] 자릿수 더하기 https://school.programmers.co.kr/learn/courses/30/lessons/12931
 # ----------------------------------------------------------------------
 # 자연수 N이 주어지면, N의 각 자릿수의 합을 구해서 return 하는 함수를 만드세요.
 # 예: N = 123  -> 1 + 2 + 3 = 6
@@ -13,14 +13,19 @@
 # 1. 숫자는 for문을 돌릴 수 없습니다. 문자열(str)로 바꾸면 가능합니다.
 # 2. 문자열 하나하나를 꺼낸 뒤에는 다시 계산을 위해 정수(int)로 바꿔야 합니다.
 
+
 def solution_1(n):
     answer = 0
-    # 여기에 코드를 작성하세요
+    n = str(n)
+    for number in n:
+        number = int(number)
+        answer += number
     
     return answer
+print(solution_1(123))
 
 # ----------------------------------------------------------------------
-# [문제 2] 없는 숫자 더하기
+# [문제 2] 없는 숫자 더하기 https://school.programmers.co.kr/learn/courses/30/lessons/86051
 # ----------------------------------------------------------------------
 # 0부터 9까지의 숫자 중 일부가 들어있는 배열 numbers가 매개변수로 주어집니다.
 # numbers에서 찾을 수 없는 0부터 9까지의 숫자를 모두 찾아 더한 수를 return 하세요.
@@ -33,10 +38,19 @@ def solution_1(n):
 # 방법 A: 0부터 9까지 for문을 돌면서 numbers 안에 있는지(if i not in numbers) 확인한다.
 # 방법 B: 수학적 사고! 0부터 9까지 다 더하면 45입니다. 여기서 numbers의 합을 빼면...?
 
+# def solution_2(numbers):
+#     answer = 0
+#     for i in range(0,10):
+#         if i not in numbers:
+#             answer += i
+    
+#     return answer
+
 def solution_2(numbers):
     answer = 0
-    # 여기에 코드를 작성하세요
-    
+    for i in range(1,10):
+        answer +=i
+    answer = answer - sum(numbers)
     return answer
 
 
