@@ -55,8 +55,8 @@ SELECT
     f.title
 FROM customer c
 JOIN rental r ON c.customer_id = r.customer_id        -- 1. 고객 & 대여 연결
-JOIN inventory i ON r.inventory_id = i.inventory_id   -- 2. 대여 & 재고 연결 (징검다리)
-JOIN film f ON i.film_id = f.film_id;                 -- 3. 재고 & 영화 연결 (도착!)
+JOIN inventory i ON r.inventory_id = i.inventory_id   -- 2. 대여 & 재고 연결
+JOIN film f ON i.film_id = f.film_id;                 -- 3. 재고 & 영화 연결 
 -- -  `YENTL IDAHO` 영화를 대여한 고객 정보 조회
 SELECT 
     c.first_name, 
@@ -89,7 +89,7 @@ JOIN category cat ON fc.category_id = cat.category_id -- 영화카테고리 -> �
 WHERE c.customer_id = 1                              -- 1번 고객만 조회
 GROUP BY cat.name                                    -- 카테고리 별로 묶고
 ORDER BY category_count DESC                         -- 제일 많이 빌린 순서로 정렬
-LIMIT 1;                                             -- 1등만 보여줘
+LIMIT 1;                                             -- 1등만
 -- -  각 직원이 일하는 매장의 주소와 도시를 조회
 SELECT 
     s.first_name AS staff_name, 
@@ -97,7 +97,7 @@ SELECT
     a.address
 FROM staff s
 JOIN store st ON s.store_id = st.store_id      -- 직원 -> 매장
-JOIN address a ON st.address_id = a.address_id -- 매장 -> 주소 (주의: 직원 집 주소가 아니라 매장 주소)
+JOIN address a ON st.address_id = a.address_id -- 매장 -> 주소
 JOIN city ci ON a.city_id = ci.city_id;        -- 주소 -> 도시
 -- -  고객별로 대여한 영화 제목과 지불한 금액, 날짜를 조회
 SELECT 
