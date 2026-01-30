@@ -14,3 +14,5 @@ prof = Professional()
 # 두 부모 클래스의 모든 메서드 사용 가능
 prof.speak()
 
+
+
