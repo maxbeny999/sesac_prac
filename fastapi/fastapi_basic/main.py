@@ -1,6 +1,13 @@
 from fastapi import FastAPI
 
+from mysite.post_api import router as post_router
+from mysite2.post_api import router as pydantic_router
+from product.product_api import router as product_router
+
 app = FastAPI()
+app.include_router(post_router)
+app.include_router(pydantic_router)
+app.include_router(product_router)
 
 
 @app.get("/")
@@ -15,4 +22,15 @@ def hello():
 
 @app.get("/hi")
 def hi():
-    return ["hello", "word", "!"]
+    return ["hello", "world", "!"]
+
+
+@app.get("/odd")
+def odd():
+    result = []
+    for i in range(100):
+        if i % 2 == 0:
+            result.append(i)
+
+    return result
+
