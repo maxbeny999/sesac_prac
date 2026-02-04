@@ -2,12 +2,12 @@ from fastapi import FastAPI
 
 from mysite.post_api import router as post_router
 from mysite2.post_api import router as pydantic_router
-from product.product_api import router as product_router
+from mysite3.routers.post_router import router as mvc_router
 
 app = FastAPI()
 app.include_router(post_router)
 app.include_router(pydantic_router)
-app.include_router(product_router)
+app.include_router(mvc_router)
 
 
 @app.get("/")
@@ -33,4 +33,3 @@ def odd():
             result.append(i)
 
     return result
-

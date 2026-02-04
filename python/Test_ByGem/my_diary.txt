@@ -1,0 +1,16 @@
+Hello Python
+파일 쓰기 연습입니다.Hello Python
+파일 쓰기 연습입니다.Hello Python
+파일 쓰기 연습입니다.Hello Python
+파일 쓰기 연습입니다.Hello Python
+파일 쓰기 연습입니다.Hello Python
+파일 쓰기 연습입니다.Hello Python
+파일 쓰기 연습입니다.Hello Python
+파일 쓰기 연습입니다.Hello Python
+파일 쓰기 연습입니다.Hello Python
+파일 쓰기 연습입니다.text + 
+text + 
+text + 
+text + 
+오늘 파이썬 공부가 재미있었다.
+파일 입출력도 이제 할 줄 안다!
