@@ -42,3 +42,4 @@ def get_products(
 @router.put("/{product_id}", response_model=ProductDetailResponse)
 def update_product(product_id: Annotated[int, Path(gt=0)], product_req: ProductUpdate):
     return product_service.update_product(product_id, product_req)
+2
