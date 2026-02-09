@@ -19,37 +19,22 @@
 # main.py (수정)
 
 from fastapi import FastAPI
-from contextlib import asynccontextmanager
-from todo_app.connection import create_db_and_tables  # <-- 가져오기
-from todo_app.routers.todo_router import router as todo_router
-from fastapi.middleware.cors import CORSMiddleware
+from database import engine, Base
 
+# [중요] models를 임포트해야 Base가 "아, 이런 테이블을 만들어야 하는구나" 하고 인식합니다.
+# (아직 파일을 안 채웠지만 곧 만들 예정이니 미리 적어둡니다)
+from todo.models.todo import Todo
+from todo.routers import todo_router
 
-# [추가] 수명주기(Lifespan) 설정: 서버 켜질 때 딱 한 번 실행됨
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    create_db_and_tables()  # 테이블 생성!
-    yield
+app = FastAPI()
 
+# 1. 테이블 생성 (앱 실행 시 DB에 테이블이 없으면 자동 생성)
+Base.metadata.create_all(bind=engine)
 
-# lifespan 등록
-app = FastAPI(lifespan=lifespan)
-
-origins = [
-    "http://localhost:5173",
-]
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],  # 모든 HTTP 메서드 허용 (GET, POST 등)
-    allow_headers=["*"],  # 모든 헤더 허용
-)
-
-app.include_router(todo_router)
+# 2. 라우터 등록 (이제 /todos 주소로 접속 가능해짐)
+app.include_router(todo_router.router)
 
 
 @app.get("/")
-def read_root():
-    return {"message": "Hello, Todo List with DB!"}
+def health_check():
+    return {"message": "Todo 서버가 정상 작동 중입니다!"}
