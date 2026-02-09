@@ -13,11 +13,9 @@ engine = create_engine(DATABASE_URL)
 # 세션 생성기 정의
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-
 # SQLAlchemy 2.0 스타일의 Base 클래스 선언
 class Base(DeclarativeBase):
     pass
-
 
 # DB 세션 의존성 주입 함수
 def get_db():

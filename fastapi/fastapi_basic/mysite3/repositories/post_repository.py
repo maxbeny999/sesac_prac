@@ -1,4 +1,4 @@
-from mysite3.schemas.post import Post
+from mysite3.schemas.post import Post, PostCreate
 
 
 class PostRepository:
@@ -25,6 +25,19 @@ class PostRepository:
             if post.id == id:
                 return post
         return None
+    
+    def modify(self, id: int, data: PostCreate):
+        for post in self.posts:
+            if post.id == id:
+                post.title = data.title
+                post.content = data.content
+                return post
+        return None        
 
-
+    def delete(self, id: int):
+        for index, post in enumerate(self.posts):
+            if post.id == id:
+                return self.posts.pop(index)
+            
+            
 post_repository = PostRepository()

@@ -1,34 +1,25 @@
 import os
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.ext.declarative import declarative_base
 from dotenv import load_dotenv
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker, DeclarativeBase
 
-# 1. .env 파일 로드
+# 환경 변수 로드
 load_dotenv()
+DATABASE_URL = os.getenv("DATABASE_URL")
 
-# 2. 환경변수에서 DB 접속 정보 가져오기
-DB_USER = os.getenv("DB_USER")
-DB_PASSWORD = os.getenv("DB_PASSWORD")
-DB_HOST = os.getenv("DB_HOST")
-DB_PORT = os.getenv("DB_PORT")
-DB_NAME = os.getenv("DB_NAME")
+# DB 엔진 생성
+engine = create_engine(DATABASE_URL)
 
-# 3. PostgreSQL 연결 주소 생성
-# 형식: postgresql://아이디:비번@주소:포트/DB이름
-SQLALCHEMY_DATABASE_URL = (
-    f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
-)
-
-# 4. 엔진 생성
-# (SQLite에서 쓰던 'check_same_thread' 옵션은 제거해야 합니다!)
-engine = create_engine(SQLALCHEMY_DATABASE_URL)
-
+# 세션 생성기 정의
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-Base = declarative_base()
+# SQLAlchemy 2.0 스타일의 Base 클래스 선언
+class Base(DeclarativeBase):
+    pass
 
-
+# DB 세션 의존성 주입 함수
+# commit, rollback 로직을 여기에 추가할수도 있어요.
+# with db.begin() 대신에
 def get_db():
     db = SessionLocal()
     try:

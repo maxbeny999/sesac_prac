@@ -35,5 +35,36 @@ class PostService:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
         return post
 
+    def update_post(self, id: int, data: PostCreate):
+        # 서비스의 입장에서는
+        # 1. id에 해당하는 post가 있는지 확인한다.
+        # 2. 그게 있다면 수정한다.
+
+        # 1. -> 없다면 예외처리가 됩니다.
+        # 다른 서비스를 호출 / 여러 개의 repository를 호출
+        self.read_post_by_id(id)
+
+
+        if data.title == "":
+            raise HTTPException(
+                status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
+                detail="title을 입력하세요",
+            )
+
+        if data.content == "":
+            raise HTTPException(
+                status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
+                detail="content을 입력하세요",
+            )
+
+        # 2.
+        return post_repository.modify(id, data)
+
+
+    def delete_post(self, id: int):
+        self.read_post_by_id(id)
+        post_repository.delete(id)
+
+
 
 post_service = PostService()
