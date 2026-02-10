@@ -32,7 +32,12 @@ def get_posts_with_user_nplusone(db: Session = Depends(get_db)):
     쿼리 수: 1 (Posts) + N (각 Post마다 User) = 1 + 6(3) = 7(4)개
     """
     posts = db.scalars(select(DemoPost)).all()
-
+    # [DemoPost, DemoPost, DemoPost, DemoPost, DemoPost]
+    # # -> [PostWithUserResponse, PostWithUserResponse, PostWithUserResponse, PostWithUserResponse]
+    # for item in [DemoPost, DemoPost, DemoPost, DemoPost, DemoPost]:
+    #     PostWithUserResponse(DemoPost) -> post.user를 가져와줘 라는 로직이 숨어있습니다.
+    #                                         UserSimpleResponse를 가져와야 하기 때문에.
+    #     그때 마다마다 user에 추가적으로 요청을 하게 됩니다.
     return posts
 
 

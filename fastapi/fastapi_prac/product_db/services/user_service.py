@@ -38,8 +38,8 @@ class UserService:
 
             wishlist = WishList(user=user, product=product)
             # cascade를 활용해서 user - product의 연관테이블인 wishlist를 생성.
-            # user.wishlist_items.append(product)
-            user.wishlists.append(wishlist)
+            user.wishlist_items.append(product)
+            # user.wishlists.append(wishlist)
 
         return "성공"
 

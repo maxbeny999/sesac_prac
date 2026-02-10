@@ -27,10 +27,12 @@ class PostService:
         return new_post
 
     def read_posts(self, db: Session):
-        return post_repository.find_all(db)
+        # return post_repository.find_all(db)
+        return post_repository.find_all_with_tags(db)
 
     def read_post_by_id(self, db: Session, id: int):
-        post = post_repository.find_by_id(db, id)
+        # post = post_repository.find_by_id(db, id)
+        post = post_repository.find_by_id_with_details(db, id)
         if not post:
             raise HTTPException(
                 status.HTTP_404_NOT_FOUND, "존재하지 않는 게시글입니다."
