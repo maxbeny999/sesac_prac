@@ -1,18 +1,38 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
+from sqlalchemy.orm import Session
+from typing import List
 
-# [주의] 이 부분은 아까 만든 스키마 파일명에 맞게 고쳐야 합니다.
-from app.schemas.movie import MovieCreate
+from app.database import get_db
+from app.schemas.movie import MovieCreate, MovieResponse
+from app.services.movie import MovieService  # 서비스만 import
 
-# 1. 라우터 설정 (영화 전용)
-# prefix: 이 라우터의 URL 앞에 무조건 /movies가 붙음
-# tags: 스웨거 문서에 'Movies'라는 이름으로 분류됨
+
 router = APIRouter(prefix="/movies", tags=["movies"])
 
 
-# 2. 영화 등록 API
-@router.post("/", status_code=201)
-def create_movie(movie: MovieCreate):
-    """
-    영화를 등록하는 API입니다.
-    """
-    return {"message": "영화 등록 성공 (Netfliz)", "data": movie}
+@router.post("/", status_code=201, response_model=MovieResponse)
+def create_movie(movie_create: MovieCreate, db: Session = Depends(get_db)):
+    return MovieService.create_movie(db, movie_create)
+
+
+@router.get("/", response_model=List[MovieResponse])
+def get_movies(db: Session = Depends(get_db)):
+    return MovieService.get_movies(db)
+
+
+@router.get("/{movie_id}", response_model=MovieResponse)
+def get_movie(movie_id: int, db: Session = Depends(get_db)):
+    return MovieService.get_movie(db, movie_id)
+
+
+@router.put("/{movie_id}", response_model=MovieResponse)
+def update_movie(
+    movie_id: int, movie_update: MovieCreate, db: Session = Depends(get_db)
+):
+    return MovieService.update_movie(db, movie_id, movie_update)
+
+
+@router.delete("/{movie_id}", status_code=204)
+def delete_movie(movie_id: int, db: Session = Depends(get_db)):
+    MovieService.delete_movie(db, movie_id)
+    return None

@@ -1,4 +1,5 @@
 from sqlalchemy import Column, Integer, String, Text
+from sqlalchemy.orm import relationship
 from app.database import Base
 
 
@@ -10,3 +11,6 @@ class Movie(Base):
     year = Column(Integer)  # 개봉 연도
     director = Column(String)  # 감독
     description = Column(Text)  # 줄거리
+
+    # 연결된 리뷰 불러오기
+    reviews = relationship("Review", back_populates="movie")

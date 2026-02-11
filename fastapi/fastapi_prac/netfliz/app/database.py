@@ -28,3 +28,15 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 # 앞으로 만들 모든 모델(테이블)들의 '공통 조상'입니다.
 # "class Movie(Base):" 처럼 상속받으면, 파이썬이 "아, 너는 DB 테이블이구나" 하고 알아챕니다.
 Base = declarative_base()
+
+
+# [추가] DB 세션 자판기
+# 1. 문을 연다 (db = SessionLocal())
+# 2. 빌려준다 (yield db)
+# 3. 다 쓰면 닫는다 (db.close()) - 중요! 안 닫으면 DB 터짐
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
