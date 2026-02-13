@@ -16,8 +16,8 @@ def create_movie(movie_create: MovieCreate, db: Session = Depends(get_db)):
 
 
 @router.get("/", response_model=List[MovieResponse])
-def get_movies(db: Session = Depends(get_db)):
-    return MovieService.get_movies(db)
+def get_movies(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
+    return MovieService.get_movies(db, skip, limit)
 
 
 @router.get("/{movie_id}", response_model=MovieResponse)

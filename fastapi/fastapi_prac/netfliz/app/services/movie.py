@@ -11,8 +11,8 @@ class MovieService:
         return MovieRepository.create_movie(db, movie_create)
 
     @staticmethod
-    def get_movies(db: Session):
-        return MovieRepository.get_movies(db)
+    def get_movies(db: Session, skip: int, limit: int):
+        return MovieRepository.get_movies(db, skip, limit)
 
     @staticmethod
     def get_movie(db: Session, movie_id: int):

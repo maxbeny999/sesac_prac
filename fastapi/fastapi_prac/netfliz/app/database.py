@@ -15,7 +15,10 @@ SQLALCHEMY_DATABASE_URL = f"postgresql://{os.getenv('DB_USER')}:{os.getenv('DB_P
 # 3. 엔진(Engine) 생성 = [발전소]
 # 실제 DB와의 '물리적인 연결 통로'를 엽니다.
 # 가장 밑바닥에서 DB와 소통하는 핵심 부품입니다.
-engine = create_engine(SQLALCHEMY_DATABASE_URL)
+engine = create_engine(
+    SQLALCHEMY_DATABASE_URL,
+    echo=True,  # <--- [NEW] 이 옵션을 켜면 실행되는 모든 SQL이 터미널에 찍힙니다!
+)
 
 # 4. 세션 공장(SessionLocal) 생성 = [콘센트]
 # 엔진(발전소)에서 전기를 끌어와서, 우리가 쓸 수 있는 '콘센트(Session)'를 만들어주는 공장입니다.

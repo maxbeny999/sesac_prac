@@ -1,4 +1,4 @@
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload
 from app.models.movie import Movie
 from app.schemas.movie import MovieCreate
 
@@ -9,8 +9,8 @@ class MovieRepository:
         new_movie = Movie(
             title=movie_create.title,
             year=movie_create.year,
-            director=movie_create.director,
             description=movie_create.description,
+            director_id=movie_create.director_id,
         )
         db.add(new_movie)  # 장바구니에 담기
         db.commit()  # 결제 버튼 누르기 (실제 저장)
@@ -18,8 +18,16 @@ class MovieRepository:
         return new_movie
 
     @staticmethod
-    def get_movies(db: Session):
-        return db.query(Movie).all()
+    def get_movies(db: Session, skip: int, limit: int):
+        # [수정] .options(joinedload(Movie.reviews)) 추가
+        # 뜻: "영화 가져올 때, reviews 테이블도 JOIN 해서 같이 가져와!"
+        return (
+            db.query(Movie)
+            .options(joinedload(Movie.reviews), joinedload(Movie.director))
+            .offset(skip)
+            .limit(limit)
+            .all()
+        )
 
     @staticmethod
     def get_movie_by_id(db: Session, movie_id: int):

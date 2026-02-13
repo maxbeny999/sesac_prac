@@ -1,17 +1,22 @@
+from typing import List
 from pydantic import BaseModel
+from app.schemas.review import ReviewResponse
+from app.schemas.director import DirectorResponse
 
 
 class MovieCreate(BaseModel):
     title: str
     year: int
-    director: str
+    director_id: int
     description: str | None = None
 
 
 #  2. 응답용(출력용) 스키마.
 class MovieResponse(MovieCreate):
     id: int
+    reviews: List[ReviewResponse] = []  # <--- [NEW] 영화 정보 안에 리뷰 리스트 포함!
 
-    # [핵심] DB 객체를 Pydantic이 읽을 수 있게 해주는 설정
+    director: DirectorResponse | None = None
+
     class Config:
         from_attributes = True
