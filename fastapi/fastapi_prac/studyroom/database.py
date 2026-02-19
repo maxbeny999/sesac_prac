@@ -8,12 +8,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # 2. 환경변수에서 DB 주소 가져오기
-DATABASE_URL = os.getenv("DB_URL")
+DATABASE_URL = os.getenv("DATABASE_URL")
 
-# (혹시나 DB_URL을 못 읽어왔을 때를 대비한 안전장치)
+# (혹시나 DATABASE_URL을 못 읽어왔을 때를 대비한 안전장치)
 if not DATABASE_URL:
     raise ValueError(
-        "❌ .env 파일에서 'DB_URL'을 찾을 수 없습니다! 설정을 확인해주세요."
+        "❌ .env 파일에서 'DATABASE_URL'을 찾을 수 없습니다! 설정을 확인해주세요."
     )
 
 # 3. 엔진 생성
