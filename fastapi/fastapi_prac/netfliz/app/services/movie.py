@@ -2,6 +2,7 @@ from sqlalchemy.orm import Session
 from fastapi import HTTPException
 from app.repositories.movie import MovieRepository
 from app.schemas.movie import MovieCreate
+from app.repositories.actor import ActorRepository
 
 
 class MovieService:
@@ -44,3 +45,17 @@ class MovieService:
             )
 
         MovieRepository.delete_movie(db, movie)
+
+    @staticmethod
+    def cast_actor(db: Session, movie_id: int, actor_id: int):
+        # 1. 영화와 배우가 실제로 존재하는지 확인
+        movie = MovieRepository.get_movie_by_id(db, movie_id)
+        actor = ActorRepository.get_actor_by_id(db, actor_id)
+
+        if not movie:
+            raise HTTPException(status_code=404, detail="영화를 찾을 수 없습니다.")
+        if not actor:
+            raise HTTPException(status_code=404, detail="배우를 찾을 수 없습니다.")
+
+        # 2. 존재하면 연결 진행
+        return MovieRepository.add_actor_to_movie(db, movie, actor)

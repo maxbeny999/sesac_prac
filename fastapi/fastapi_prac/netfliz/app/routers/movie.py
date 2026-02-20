@@ -36,3 +36,8 @@ def update_movie(
 def delete_movie(movie_id: int, db: Session = Depends(get_db)):
     MovieService.delete_movie(db, movie_id)
     return None
+
+
+@router.post("/{movie_id}/actors/{actor_id}", response_model=MovieResponse)
+def cast_actor_to_movie(movie_id: int, actor_id: int, db: Session = Depends(get_db)):
+    return MovieService.cast_actor(db, movie_id, actor_id)

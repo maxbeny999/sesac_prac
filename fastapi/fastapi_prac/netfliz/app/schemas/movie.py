@@ -2,6 +2,7 @@ from typing import List
 from pydantic import BaseModel
 from app.schemas.review import ReviewResponse
 from app.schemas.director import DirectorResponse
+from app.schemas.actor import ActorResponse
 
 
 class MovieCreate(BaseModel):
@@ -17,6 +18,7 @@ class MovieResponse(MovieCreate):
     reviews: List[ReviewResponse] = []  # <--- [NEW] 영화 정보 안에 리뷰 리스트 포함!
 
     director: DirectorResponse | None = None
+    actors: List[ActorResponse] = []
 
     class Config:
         from_attributes = True

@@ -99,15 +99,15 @@
           "Q5Zrbum6Bt-WJVZd5TOPH"
         ],
         "ui": {
-          "x": 860.0137,
-          "y": 510.7809,
+          "x": 871.8559,
+          "y": 535.7809,
           "zIndex": 15,
           "widthName": 60,
           "widthComment": 60,
           "color": ""
         },
         "meta": {
-          "updateAt": 1771474618951,
+          "updateAt": 1771546895216,
           "createAt": 1771460767400
         }
       },
@@ -136,15 +136,15 @@
           "CMrAErOnVnud6BJgeGtYV"
         ],
         "ui": {
-          "x": 537.1644,
-          "y": 884.5343,
+          "x": 538.4802,
+          "y": 883.2185,
           "zIndex": 39,
           "widthName": 63,
           "widthComment": 60,
           "color": ""
         },
         "meta": {
-          "updateAt": 1771474620187,
+          "updateAt": 1771546900751,
           "createAt": 1771461483508
         }
       },
@@ -695,8 +695,8 @@
           "columnIds": [
             "QA0aYilhXGioyD3V0Mvtq"
           ],
-          "x": 918.1644,
-          "y": 1008.5343,
+          "x": 919.4802,
+          "y": 1007.2185,
           "direction": 2
         },
         "end": {
@@ -723,8 +723,8 @@
           "columnIds": [
             "n5EWHKhXdVzXHCgSpA3kF"
           ],
-          "x": 1225.0137,
-          "y": 586.7809,
+          "x": 1236.8559,
+          "y": 611.7809,
           "direction": 2
         },
         "end": {
@@ -760,8 +760,8 @@
           "columnIds": [
             "kIV3y2Tq5znmb7tDGfFEt"
           ],
-          "x": 632.4144,
-          "y": 884.5343,
+          "x": 633.7302,
+          "y": 883.2185,
           "direction": 4
         },
         "meta": {
@@ -779,8 +779,8 @@
           "columnIds": [
             "n5EWHKhXdVzXHCgSpA3kF"
           ],
-          "x": 860.0137,
-          "y": 586.7809,
+          "x": 871.8559,
+          "y": 611.7809,
           "direction": 1
         },
         "end": {
@@ -788,8 +788,8 @@
           "columnIds": [
             "hnenA4goMx5WcV_3AM3Ei"
           ],
-          "x": 822.9144,
-          "y": 884.5343,
+          "x": 824.2302,
+          "y": 883.2185,
           "direction": 4
         },
         "meta": {

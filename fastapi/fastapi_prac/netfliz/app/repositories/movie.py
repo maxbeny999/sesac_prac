@@ -1,6 +1,7 @@
 from sqlalchemy.orm import Session, joinedload
 from app.models.movie import Movie
 from app.schemas.movie import MovieCreate
+from app.models.actor import Actor
 
 
 class MovieRepository:
@@ -23,7 +24,11 @@ class MovieRepository:
         # 뜻: "영화 가져올 때, reviews 테이블도 JOIN 해서 같이 가져와!"
         return (
             db.query(Movie)
-            .options(joinedload(Movie.reviews), joinedload(Movie.director))
+            .options(
+                joinedload(Movie.reviews),
+                joinedload(Movie.director),
+                joinedload(Movie.actors),
+            )
             .offset(skip)
             .limit(limit)
             .all()
@@ -47,3 +52,11 @@ class MovieRepository:
     def delete_movie(db: Session, movie: Movie):
         db.delete(movie)
         db.commit()
+
+    @staticmethod
+    def add_actor_to_movie(db: Session, movie: Movie, actor: Actor):
+        # 파이썬 리스트 다루듯이 append만 하면, SQLAlchemy가 알아서 중간 테이블에 INSERT 해줍니다!
+        movie.actors.append(actor)
+        db.commit()
+        db.refresh(movie)
+        return movie
