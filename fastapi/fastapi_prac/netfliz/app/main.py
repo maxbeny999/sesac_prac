@@ -12,7 +12,7 @@ from app.routers import actor as actor_router_file
 # Base가 무비모델을 읽어서 db에 테이블을 설치
 Base.metadata.create_all(bind=engine)
 
-# FastAPI 앱 생성 (가게 오픈)
+# FastAPI 앱 생성
 app = FastAPI()
 
 # 라우터 등록
@@ -23,7 +23,7 @@ app.include_router(director_router_file.router)
 app.include_router(actor_router_file.router)
 
 
-# 데코레이터(@): 요청이 들어오면 이 함수가 처리한다고 '인터폰' 연결
+# 데코레이터(@): 요청이 들어오면 이 함수가 처리
 @app.get("/")
 def read_root():
 
