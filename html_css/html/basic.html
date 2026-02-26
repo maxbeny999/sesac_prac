@@ -3,35 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>나의 첫 웹페이지</title>
 </head>
 <body>
-    <div>
-        <h3> 오늘의 할 일</h3>
+    <header>
+        <h1>MAX</h1>
+    </header>
+    <main>
+        <img src="https://via.placeholder.com/150" alt = "max의 프로필 사진">
+    <p>결석은 했지만, 오늘 하루만에 다 따라잡겠습니다!</p>
+    <a href="https://github.com/maxbeny999/TIL.git" target="_blank">내 포트폴리오 보러가기</a>
+    <h2>항공권 예약</h2>
     <ul>
-        <li><strong>오전 9시:</strong> </li>
-        <li><strong>오후 2시:</strong> </li>
-        <li><strong>오후 4시:</strong> </li>
+        <li>빠르고 간편한 예약</li>
+        <li>최저가 운임 보장</li>
     </ul>
-    </div>
-    <hr>
-    <div>
-        <h3> 장보기 목록</h3>
-    <ul>
-        <li><strong>과일:</strong> </li>
-        <li><strong>채소:</strong> </li>
-        <li><strong>생필품:</strong> </li>
-    </ul>
-    </div>
-    <hr>
-        <div>
-        <h3> 다음 주 계획 </h3>
-    <ul>
-        <li><strong>월요일:</strong> </li>
-        <li><strong>수요일:</strong> </li>
-        <li><strong>금요일:</strong> </li>
-    </ul>
-    </div>
-    <hr>
+    <form>
+    <label for="departure">출발지 </label>
+    <input type="text" id="departure">
+
+    <label for="arrival">도착지</label> 
+    <input type="text" id="arrival">
+    
+    <label for="go_date">출발일</label>
+    <input type="date" id="go_date">
+
+    <p>좌석등급</p>
+
+    <input type="radio" id="eco" name="seat_class">
+    <label for="eco">이코노미</label>
+
+    <input type="radio" id="biz" name="seat_class">
+    <label for="biz">비즈니스</label>
+
+    <input type="radio" id="fst" name="seat_class">
+    <label for="fst">퍼스트</label>
+
+    <p>수하물 추가</p>
+    <input type="checkbox" id="carry_on">
+    <label for="carry_on">기내 수하물</label>
+
+    <input type="checkbox" id="checked_bag">
+    <label for="checked_bag">위탁 수하물</label>
+
+    <label for="pass_num">탑승객 수</label>
+    <select id="pass_num"> 
+        <option>1명</option>
+        <option>2명</option>
+        <option>3명</option>
+        <option>4명</option>
+    </select>
+    <button type="submit">항공권 검색하기</button>
+    </form>
+    </main>
+    <footer>© 2026 MAX. All rights reserved</footer>
 </body>
 </html>
