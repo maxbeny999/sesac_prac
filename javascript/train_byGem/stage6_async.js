@@ -56,3 +56,16 @@ const get_data = async () => {
 //         return "Unknown"
 
 // 여기에 코드를 작성해 주세요.
+
+const fetchUser = async() => {
+    try {
+        const response = await fetch("https://api.example.com/user")
+
+        const data = await response.json()
+
+        return data.name
+    } catch (e) {
+        console.log("데이터를 가져오지 못했습니다", e)
+        return "Unknown"
+    }
+}
