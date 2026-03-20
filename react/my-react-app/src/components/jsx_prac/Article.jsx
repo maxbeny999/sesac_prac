@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Article = () => {
   return (
@@ -8,4 +8,5 @@ const Article = () => {
     </div>
   );
 };
+
 export default Article;

@@ -1,30 +1,34 @@
-import './App.css'
+import { useState, useEffect } from 'react'; // 심장(State)과 마이크(Effect) 둘 다 가져옵니다!
+import './App.css';
 
-// 1. 나만의 레고 블록(컴포넌트) 만들기!
-// 미션 1: 컴포넌트 이름은 무조건 '대문자'로 시작해야 합니다! 'loginBox'를 알맞게 고쳐주세요.
-const /* 빈칸 (이름 고치기) */ = () => {
-    return (
-        <div className="input-group">
-            <h1>로그인하세요</h1>
-            <input type="text" placeholder="아이디를 입력하세요" />
-        </div>
-    );
-};
-
-
-// 2. 메인 화면(App)에서 레고 블록 조립하기!
 function App() {
-    return (
-        <>
-            <h2>Max님의 멋진 웹사이트</h2>
-            
-            {/* 미션 2: 위에서 만든 나만의 컴포넌트를 HTML 태그처럼 불러와 보세요! (스스로 닫기 잊지 마세요!) */}
-            < /* 빈칸 */ /> 
-            
-            {/* 💡 똑같은 걸 또 쓰고 싶으면 그냥 태그를 한 번 더 쓰면 됩니다! */}
-            < /* 빈칸 */ /> 
-        </>
-    );
+  // 처음 화면이 켜졌을 때는 데이터가 없으니까 "로딩중..." 이라고 띄워둡니다.
+  const [menuMessage, setMenuMessage] = useState(
+    '데이터를 불러오는 중입니다... 🌀',
+  );
+
+  // 화면이 처음 켜지자마자 실행될 행동을 적어줍니다.
+  useEffect(
+    () => {
+      // setTimeout: 특정 시간 뒤에 코드를 실행해주는 JS 기본 타이머입니다.
+      setTimeout(() => {
+        // 미션 1: 2초가 지났습니다! 지휘봉(setMenuMessage)을 휘둘러서 글자를 "아메리카노, 라떼, 소금빵 준비 완료! ☕" 로 바꿔보세요!
+        setMenuMessage('아메리카노, 라떼, 소금빵 준비 완료! ☕');
+      }, 2000); // 2000ms = 2초
+    },
+    [
+      /* 미션 2: 화면이 '처음 켜질 때 딱 한 번만' 실행되게 하려면 이 대괄호 안에 뭘 넣어야 할까요? (힌트: 아무것도 안 넣는 게 정답의 핵심!) */
+    ],
+  );
+
+  return (
+    <div style={{ padding: '50px', textAlign: 'center' }}>
+      <h2>서버 통신 흉내내기 (useEffect)</h2>
+
+      {/* State 값을 화면에 보여줍니다 */}
+      <h3 style={{ color: 'teal' }}>{menuMessage}</h3>
+    </div>
+  );
 }
 
-export default App
+export default App;
