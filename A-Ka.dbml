@@ -1,0 +1,22 @@
+Table users {
+  id UUID [pk]
+  kakao_user_id String [unique, note: '카카오톡 식별자']
+  notion_token String [null, note: '노션 API 접근 토큰']
+  current_status String [note: '현재 유저 상태 (focus, idle)']
+  created_at Timestamp
+}
+
+Table knowledge_metadata {
+  id UUID [pk, note: 'Pinecone Vector ID와 1:1 매핑']
+  user_id UUID [ref: > users.id]
+  source_type String [note: '출처 (youtube, insta, text, file)']
+  source_url String [null, note: '원본 링크']
+  is_processed Boolean [default: false, note: 'LangGraph 처리 완료 여부']
+}
+
+Table tasks {
+  id UUID [pk]
+  user_id UUID [ref: > users.id]
+  status String [note: 'PENDING, PROCESSING, COMPLETED, FAILED']
+  result_summary JSON [null, note: 'LangGraph 처리 결과/에러']
+}
